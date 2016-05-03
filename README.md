@@ -39,10 +39,10 @@ Requires:
 
 1. node `4.3.0 or higher`.
 2. Mongodb
-
-`git clone` or `npm i`
-
-Edit `config/index.js` where appropriate esp the admin username and password.
+3. `npm i -g bower`
+4. `git clone https://github.com/lestoni/dashy.git` or `npm i dashy-kong`
+5. Edit `config/index.js` where appropriate esp the admin username and password.
+6. `npm start`
 
 ## More
 
