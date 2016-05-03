@@ -1,6 +1,7 @@
 {
   "name": "dashy-kong",
   "version": "1.0.0",
+  "description": "Simple stupid kong dashboard",
   "scripts": {
     "start": "bower install && node app.js"
   },
@@ -26,5 +27,21 @@
     "moment": "~2.13.0",
     "mongoose": "~4.4.13",
     "randomcolor": "~0.4.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lestoni/dashy.git"
+  },
+  "keywords": [
+    "kong",
+    "api",
+    "gateway",
+    "dashboard"
+  ],
+  "author": "Tony Mutai <tonimut7@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lestoni/dashy/issues"
+  },
+  "homepage": "https://github.com/lestoni/dashy"
 }
