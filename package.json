@@ -1,7 +1,6 @@
 {
   "name": "dashy-kong",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "start": "bower install && node app.js"
   },
