@@ -3,6 +3,8 @@ Simple Stupid Kong Admin Dashboard i made for my homie over the weekend, now mak
 
 __WIP__
 
+![Screen shot](./screenshot.png)
+
 ## Features.
 
 - [x] Node Status and Network Requests Overview
@@ -44,7 +46,7 @@ Edit `config/index.js` where appropriate esp the admin username and password.
 
 ## More
 
-Built with [Gentelella Boostrap Admin Dashboard](https://github.com/puikinsh/gentelella.git). 
+Built with [Gentelella Boostrap Admin Dashboard](https://github.com/puikinsh/gentelella.git).
 
 ## LICENSE
 

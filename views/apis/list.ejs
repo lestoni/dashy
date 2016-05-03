@@ -1,0 +1,114 @@
+<%- include('../header') %>
+<%- include("../side-nav"); %>
+<%- include("../top-nav"); %>
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>List APIs</h3>
+      </div>
+    </div>
+
+    <div class="title_right">
+      <div class="col-md-3 col-sm-5 col-xs-12 form-group pull-right top_search">
+        <form method="GET" action="/apis/list">
+          <div class="input-group">
+            <select class="form-control" name="node">
+              <option value="default">Select Node</option>
+              <% nodes.forEach(function(node) { %>
+                <option value="<%= node._id %>"><%= node.name %></option>
+              <% }) %>
+            </select>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Go!</button>
+            </span>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="row">
+
+    <div class="col-md-12">
+      <div class="x_panel">
+        <div class="x_content">
+
+          <% apis.forEach(function(api) { %>
+          <div class="col-md-4 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2><%= api.name %></h2>
+                <div class="clearfix"></div>
+              </div>
+              <ul class="list-unstyled top_profiles scroll-view" style="height:auto;">
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">upstream url</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= api.upstream_url %> </code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">request path</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= api.request_path ? api.request_path : "" %> </code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">request host</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= api.request_host ? api.request_host : "" %> </code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">preserve host</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= api.preserve_host ? api.preserve_host : "false" %> </code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">strip request path</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= api.strip_request_path ? api.strip_request_path : "false" %> </code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">id</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= api.id %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">create at</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= moment(api.created_at).format("dddd, MMMM Do YYYY") %> </code></p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <% }) %>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+</div>
+<!-- /page content -->
+
+<!-- footer content -->
+<%- include("../footer"); %>
+
+
+
+
+

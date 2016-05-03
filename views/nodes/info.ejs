@@ -1,0 +1,140 @@
+<%- include('../header') %>
+<%- include("../side-nav"); %>
+<%- include("../top-nav"); %>
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Node Info</h3>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="clearfix"></div>
+  <div class="row">
+
+    <div class="col-md-12">
+      <div class="x_panel">
+        <div class="x_content">
+          <% info.forEach(function(node) { %>
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2><%= node.node_name %></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Settings 1</a>
+                      </li>
+                      <li><a href="#">Settings 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <ul class="list-unstyled top_profiles scroll-view" style="height:auto;">
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">version</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.version %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">lua version</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.lua_version %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">hostname</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.hostname %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">proxy listen</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.configuration.proxy_listen %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">cluster listen rpc</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.configuration.cluster_listen_rpc %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">memory cache size</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.configuration.memory_cache_size %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">admin api listen</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.configuration.admin_api_listen %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">pid file</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.configuration.pid_file %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">nginx working dir</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.configuration.nginx_working_dir %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">database</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.configuration.database %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">cluster listen</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.configuration.cluster_listen %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">plugins.available_on_server</a>
+                    <% node.plugins.available_on_server.forEach(function(plugin) { %>
+                      <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= plugin %></code></p>
+                    <% }) %>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <% }) %>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+</div>
+<!-- /page content -->
+
+<!-- footer content -->
+<%- include("../footer"); %>
+
+

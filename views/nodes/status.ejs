@@ -1,0 +1,188 @@
+<%- include('../header') %>
+<%- include("../side-nav"); %>
+<%- include("../top-nav"); %>
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Node Status</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="clearfix"></div>
+
+  <% nodes.forEach(function(node) { %>
+  <div class="row">
+
+    <div class="col-md-12">
+      <div class="x_panel">
+        <h2>[<strong><%= node.node_name %></strong>]</h2>
+        <div class="x_content">
+
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>server</h2>
+                <div class="clearfix"></div>
+              </div>
+              <ul class="list-unstyled top_profiles scroll-view" style="height:auto;">
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">connections handled</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.server.connections_handled %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">connections reading</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.server.connections_reading %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">connections active</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.server.connections_active %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">connections waiting</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.server.connections_waiting %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">connections writing</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.server.connections_writing %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">total requests</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.server.total_requests %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">connections accepted</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.server.connections_accepted %></code></p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>Database</h2>
+                <div class="clearfix"></div>
+              </div>
+              <ul class="list-unstyled top_profiles scroll-view" style="height:auto;">
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">oauth2 tokens</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.oauth2_tokens %> </code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">jwt secrets</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.jwt_secrets %> </code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">response ratelimiting metrics</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.response_ratelimiting_metrics %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">keyauth credentials</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.keyauth_credentials %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">oauth2 authorization codes</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.oauth2_authorization_codes %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">acls</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.acls %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">apis</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.apis %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">hmacauth credentials</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.hmacauth_credentials %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">consumers</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.consumers %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">plugins</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.plugins %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">oauth2 credentials</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.oauth2_credentials %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">nodes</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.nodes %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">basicauth credentials</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.basicauth_credentials %></code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">ratelimiting metrics</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= node.database.ratelimiting_metrics %></code></p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <% }) %>
+
+
+</div>
+</div>
+<!-- /page content -->
+
+<!-- footer content -->
+<%- include("../footer"); %>
+
+
+

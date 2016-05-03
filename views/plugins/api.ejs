@@ -1,0 +1,118 @@
+<%- include('../header') %>
+<%- include("../side-nav"); %>
+<%- include("../top-nav"); %>
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>List APIs</h3>
+      </div>
+    </div>
+
+    <div class="title_right">
+      <div class="col-md-3 col-sm-5 col-xs-12 form-group pull-right top_search">
+        <form method="GET" action="/plugins/list/api">
+          <div class="input-group">
+            <select class="form-control" name="node">
+              <option value="default">Select Node</option>
+              <% nodes.forEach(function(node) { %>
+                <option value="<%= node._id %>"><%= node.name %></option>
+              <% }) %>
+            </select>
+          </div>
+          <div class="input-group">
+            <select class="form-control" name="api">
+              <option value="default">Select API</option>
+              <% apis.forEach(function(api) { %>
+                <option value="default">----<%= api.name %>----</option>
+                <% api.apis.forEach(function(a) { %>
+                  <option value="<%= a.id %>"><%= a.name %></option>
+                <% }) %>
+              <% }) %>
+            </select>
+          </div>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Go!</button>
+            </span>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="row">
+
+    <div class="col-md-12">
+      <div class="x_panel">
+        <div class="x_content">
+
+          <% plugins.forEach(function(plugin) { %>
+          <div class="col-md-4 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2><%= plugin.name %></h2>
+                <div class="clearfix"></div>
+              </div>
+              <ul class="list-unstyled top_profiles scroll-view" style="height:auto;">
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">id</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= plugin.id %> </code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">api id</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= plugin.api_id %> </code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">enabled</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= plugin.enabled %> </code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">create at</a>
+                    <p style="margin-bottom:5px;"><code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= moment(plugin.created_at).format("dddd, MMMM Do YYYY") %> </code></p>
+                  </div>
+                </li>
+                <li class="media event">
+                  <div class="media-body">
+                    <a class="title" href="#">config</a>
+                    <p style="margin-bottom:5px;">
+                        <code style="background-color:#5D3939;color:#ffffff;font-size:1em;"><%= JSON.stringify(plugin.config, null, 2) %></code>
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <% }) %>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+</div>
+<!-- /page content -->
+
+<!-- footer content -->
+<%- include("../footer"); %>
+
+
+
+
+

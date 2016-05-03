@@ -1,0 +1,76 @@
+<%- include('header') %>
+            <%- include("side-nav"); %>
+            <%- include("top-nav"); %>
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+
+          <!-- top tiles -->
+          <div class="row tile_count">
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-signal"></i> Total Nodes </span>
+              <div class="count"><%= nodes.count %></div>
+            </div>
+            <!--<div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">-->
+              <!--<span class="count_top"><i class="fa fa-unlock-alt"></i> Total Versions </span>-->
+              <!--<div class="count">2</div>-->
+            <!--</div>-->
+            <div class="col-md-6 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-exchange"></i> Total Requests </span>
+              <div class="count"><%= nodes.total_requests %></div>
+            </div>
+          </div>
+          <!-- /top tiles -->
+
+          <div class="clearfix"></div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Status</h4>
+              <% (Object.keys(nodes.status)).forEach(function(node) { %>
+                <% if(nodes.status[node] && (nodes.status[node] === 'success')) { %>
+                  <strong> <%= node %> </strong> <span class="label label-success">Active</span>
+                  <span>/</span>
+                <% } %>
+                <% if(nodes.status[node] && (nodes.status[node] === 'error')) { %>
+                  <strong> <%= node %> </strong> <span class="label label-danger">Unreachable</span>
+                  <span>/</span>
+                <% } %>
+              <% })%>
+            </div>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <div  style="margin-top:20px;" class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="dashboard_graph">
+
+                <div class="row x_title">
+                  <div class="col-md-6">
+                    <h3>Network Activities <small>Nodes requests</small></h3>
+                  </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="x_content">
+                    <canvas id="lineChart"></canvas>
+                  </div>
+                </div>
+
+                <div class="clearfix"></div>
+              </div>
+            </div>
+
+          </div>
+          <br />
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <%- include("footer"); %>
