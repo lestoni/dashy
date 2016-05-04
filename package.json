@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Simple stupid kong dashboard",
   "scripts": {
-    "start": "bower install && node app.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "bcrypt": "~0.8.6",

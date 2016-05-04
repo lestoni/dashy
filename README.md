@@ -41,8 +41,10 @@ Requires:
 2. Mongodb
 3. `npm i -g bower`
 4. `git clone https://github.com/lestoni/dashy.git` or `npm i dashy-kong`
-5. Edit `config/index.js` where appropriate esp the admin username and password.
+5. `bower install`
+5. Edit `config/index.js` where appropriate esp the admin username and password, session tokens.
 6. `npm start`
+7. Go to `http://localhost:7500`
 
 ## More
 
