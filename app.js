@@ -52,7 +52,7 @@ bootstrap()
 });
 
 app.use(session({
-  store: new MongoStore()
+  store: new MongoStore({ url: config.MONGODB.URL })
 }));
 app.use(flash());
 
