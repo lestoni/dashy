@@ -55,13 +55,6 @@ Building and Running the docker container
   $ docker run -d --name dashy-kong -p $HOST_IP:7500:7500 -e MONGODB_URL=$MONGODB_URL dashy-kong
 ```
 
-Alternatively, pull from docker hub
-
-```
-  $ docker pull dashy-kong
-  $ docker run -d --name dashy-kong -p $HOST_IP:7500:7500 -e MONGODB_URL=$MONGODB_URL dashy-kong
-```
-
 ## More
 
 Built with [Gentelella Boostrap Admin Dashboard](https://github.com/puikinsh/gentelella.git).
