@@ -25,7 +25,7 @@
     "koa-views": "^3.1.0",
     "lodash": "~4.11.1",
     "moment": "~2.13.0",
-    "mongoose": "~4.4.13",
+    "mongoose": "~5.7.6",
     "randomcolor": "~0.4.4"
   },
   "repository": {
